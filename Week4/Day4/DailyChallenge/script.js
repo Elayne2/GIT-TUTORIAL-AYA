@@ -21,7 +21,7 @@ function bottlesOfBeer() {
         console.log(nextBottles + " " + nextBottleText + " of beer on the wall");
       }
   
-      console.log(""); // Empty line for separation
+      console.log(""); 
     }
   }
   

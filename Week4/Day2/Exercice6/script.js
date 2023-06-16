@@ -47,11 +47,11 @@ function rentalCarCost() {
   }
   
 function totalVacationCost() {
-    var hotelCost = hotelCost();
-    var planeRideCost = planeRideCost();
-    var rentalCarCost = rentalCarCost();
+    var hotelcost = hotelCost();
+    var planeridecost = planeRideCost();
+    var rentalcarcost = rentalCarCost();
   
-    var totalCost = hotelCost + planeRideCost + rentalCarCost;
+    var totalCost = hotelcost + planeridecost + rentalcarcost;
   
     console.log("The car cost: $" + rentalCarCost);
     console.log("The hotel cost: $" + hotelCost);
