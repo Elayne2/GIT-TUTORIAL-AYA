@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function funcOne() {
+    let a = 5;
+    if(a > 1) {
+        a = 3;
+    }
+    alert(`inside the funcOne function ${a}`);
+}
+funcOne()
+
+function funcTwo() {
+    b = 5;
+}
+
+function funcThree() {
+    alert(`inside the funcThree function ${b}`);
+}
+funcThree()
+funcTwo()
+funcThree()
+
+
+function funcFour() {
+    window.c = "hello";
+}
+
+
+function funcFive() {
+    alert(`inside the funcFive function ${d}`);
+}
+
+funcFour()
+funcFive()
+
+
+let e = 1;
+function funcSix() {
+    let e = "test";
+    alert(`inside the funcSix function ${e}`);
+}
+
+funcSix()
+
+let f = 2;
+if (true) {
+    let f = 5;
+    alert(`in the if block ${f}`);
+}
+alert(`outside of the if block ${f}`);
+
+    </script>
+</body>
+</html>

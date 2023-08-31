@@ -1,0 +1,16 @@
+#color-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 50px);
+    grid-gap: 2px; 
+  }
+  
+  .color-cell {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border: 1px solid white;
+  }
+  h1 {
+    color: greenyellow;
+}
+  

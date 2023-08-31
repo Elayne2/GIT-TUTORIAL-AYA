@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome John</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Welcome website</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" id="user-profile">
+                
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        (function(userName) {
+            var userDiv = document.createElement('div');
+            userDiv.className = 'nav-link';
+            
+            var userImage = document.createElement('img');
+            userImage.src = 'https://www.bing.com/images/search?view=detailV2&ccid=JIEU8tgQ&id=8F09C5DACC89C470EFE93C241B110CAFE23EA7F2&thid=OIP.JIEU8tgQ-2X4u3psjGanNQHaIm&mediaurl=https%3a%2f%2freviews.tn%2fwp-content%2fuploads%2f2021%2f05%2fphoto-de-profil-aesthetic-gars_12.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.248114f2d810fb65f8bb7a6c8c66a735%3frik%3d8qc%252b4q8MERskPA%26pid%3dImgRaw%26r%3d0&exph=919&expw=791&q=Photo+De+Profile+Gars&simid=608014112370544006&FORM=IRPRST&ck=D799C5C4F674BDB1F6E1B1AF8AF5023B&selectedIndex=5';
+            userImage.className = 'user-image';
+            
+            var userNameElement = document.createElement('span');
+            userNameElement.textContent = userName;
+            
+            userDiv.appendChild(userImage);
+            userDiv.appendChild(userNameElement);
+            
+            var userProfileContainer = document.getElementById('user-profile');
+            userProfileContainer.appendChild(userDiv);
+        })('John');
+    </script>
+</body>
+</html>

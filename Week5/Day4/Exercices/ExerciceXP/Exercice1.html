@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    p {
+      background: yellow;
+      color: red;
+    }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <button id="clear">Clear Interval</button>
+
+    <script>
+      
+        setTimeout(function() {
+            alert("Hello World");
+        }, 2000);
+
+        
+        setTimeout(function() {
+            const container = document.getElementById('container');
+            const paragraph = document.createElement('p');
+            paragraph.textContent = 'Hello World';
+            container.appendChild(paragraph);
+        }, 2000);
+
+
+        let Interval = setInterval(function() {
+            var container1 = document.getElementById("container");
+            var newParagraph = document.createElement("p");
+            newParagraph.innerHTML = "Hello World";
+            container1.appendChild(newParagraph);
+    
+            if (container1.getElementsByTagName("p").length === 5) {
+            clearInterval(Interval);
+            }
+            }, 2000);
+
+        const clearButton = document.getElementById('clear');
+        clearButton.addEventListener('click', function() {
+            clearInterval(Interval);
+        });
+    </script>
+</body>
+</html>

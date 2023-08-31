@@ -1,0 +1,34 @@
+h1 {
+	text-align: center;
+}
+body {
+	font-family:initial;
+}
+
+form {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 20px;
+}
+
+label {
+	margin-right: 15px;
+}
+
+button {
+	background-color: lightblue;
+	color: black;
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color:whitesmoke;
+}
+
+.Taskslist {
+    color: black;
+	margin: 20px;
+}

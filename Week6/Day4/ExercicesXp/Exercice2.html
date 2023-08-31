@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weight Conversion</title>
+</head>
+<body>
+    <script>
+        
+        function kgToGramsDeclaration(weightInKg) {
+            return weightInKg * 1000;
+        }
+
+        console.log("Function Declaration:", kgToGramsDeclaration(2));
+
+        const kgToGramsExpression = function(weightInKg) {
+            return weightInKg * 1000;
+        };
+
+       
+        console.log("Function Expression:", kgToGramsExpression(3));
+
+       
+        const kgToGramsArrow = weightInKg => weightInKg * 1000;
+
+   
+        console.log("Arrow Function:", kgToGramsArrow(4));
+    </script>
+</body>
+</html>

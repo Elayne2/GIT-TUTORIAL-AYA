@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+(function(numberOfChildren, partnerName, geographicLocation, jobTitle) {
+    var sentence = "You will be a " + jobTitle + " in " + geographicLocation + ", and married to " + partnerName + " with " + numberOfChildren + " kids.";
+    var outputDiv = document.createElement('div');
+    outputDiv.textContent = sentence;
+    document.body.appendChild(outputDiv);
+})
+(3, "Leila", "Casa", "Doctor");
+    </script>
+</body>
+</html>
