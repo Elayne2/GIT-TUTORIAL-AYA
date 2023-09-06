@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+console.log([2] === [2]); // false
+console.log({} === {});   // false
+
+const object1 = { number: 5 };// The value is number 5
+const object2 = object1;// The value is number 5 since it references to obbject1 which value is number 5
+const object3 = object2;// The value is number 5 since it references to obbject2 that references to object1 which value is number 5
+const object4 = { number: 5};// A new object which value is number 5
+
+object1.number = 4;
+console.log(object2.number)//4
+console.log(object3.number)//4
+console.log(object4.number)//5
+
+class Animal {
+  constructor(name, type, color) {
+    this.name = name;
+    this.type = type;
+    this.color = color;
+  }
+}
+
+class Mamal extends Animal {
+  sound(sound) {
+    return `Moooo I'm a ${this.type}, named ${this.name} and I'm ${this.color} and I go "${sound}"`;
+  }
+}
+
+const farmerCow = new Mamal("Lily", "cow", "brown and white");
+const result = farmerCow.sound("moos");
+console.log(result);
+
+    </script>
+</body>
+</html>

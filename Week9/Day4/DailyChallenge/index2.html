@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="cityForm">
+        <label for="city1Latitude">City 1 Latitude:</label>
+        <input type="number" id="city1Latitude">
+        <label for="city1Longitude">City 1 Longitude:</label>
+        <input type="number" id="city1Longitude">
+        <label for="city2Latitude">City 2 Latitude:</label>
+        <input type="number" id="city2Latitude">
+        <label for="city2Longitude">City 2 Longitude:</label>
+        <input type="number" id="city2Longitude">
+        <button type="button" id="submitButton">Submit</button>
+      </form>
+      
+      <div id="result"></div>
+
+    <script>
+        function getSunrise(latitude, longitude) {
+  const apiUrl = `https://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}&formatted=0`;
+  return fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => data.results.sunrise);
+}
+
+document.getElementById('submitButton').addEventListener('click', async () => {
+  const city1Latitude = parseFloat(document.getElementById('city1Latitude').value);
+  const city1Longitude = parseFloat(document.getElementById('city1Longitude').value);
+  const city2Latitude = parseFloat(document.getElementById('city2Latitude').value);
+  const city2Longitude = parseFloat(document.getElementById('city2Longitude').value);
+
+  const promise1 = getSunrise(city1Latitude, city1Longitude);
+  const promise2 = getSunrise(city2Latitude, city2Longitude);
+
+  try {
+    const [sunrise1, sunrise2] = await Promise.all([promise1, promise2]);
+    document.getElementById('result').innerHTML = `Sunrise in City 1: ${sunrise1}<br>Sunrise in City 2: ${sunrise2}`;
+  } catch (error) {
+    document.getElementById('result').innerHTML = `Error: ${error}`;
+  }
+});
+    </script>
+</body>
+</html>

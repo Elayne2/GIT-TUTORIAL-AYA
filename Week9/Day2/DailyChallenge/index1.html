@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+function makeAllCaps(words) {
+    return new Promise((resolve, reject) => {
+        if (Array.isArray(words)) {
+            const areAllStrings = words.every(word => typeof word === "string");
+            if (areAllStrings) {
+                const uppercasedWords = words.map(word => word.toUpperCase());
+                resolve(uppercasedWords);
+            } else {
+                reject("All elements in the array should be strings");
+            }
+        } else {
+            reject("Input should be an array");
+        }
+    });
+}
+
+function sortWords(words) {
+    return new Promise((resolve, reject) => {
+        if (Array.isArray(words) && words.length > 4) {
+            const sortedWords = words.sort();
+            resolve(sortedWords);
+        } else {
+            reject("Array should have more than 4 elements");
+        }
+    });
+}
+
+
+makeAllCaps([1, "pear", "banana"])
+    .then(arr => sortWords(arr))
+    .then(result => console.log(result))
+    .catch(error => console.log(error));
+
+makeAllCaps(["apple", "pear", "banana"])
+    .then(arr => sortWords(arr))
+    .then(result => console.log(result))
+    .catch(error => console.log(error));
+
+makeAllCaps(["apple", "pear", "banana", "melon", "kiwi"])
+    .then(arr => sortWords(arr))
+    .then(result => console.log(result))
+    .catch(error => console.log(error));
+
+    </script>
+</body>
+</html>
